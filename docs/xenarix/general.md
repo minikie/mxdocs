@@ -1,3 +1,9 @@
 # general
 
-## test
+## usage
+
+## simul num
+
+## frequency 
+
+## timegrid

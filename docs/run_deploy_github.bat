@@ -8,4 +8,6 @@ call git add -A
 call git commit -m 'deploy'
 call git push -f https://github.com/minikie/minikie.github.io master
 deploy complete -----------------------
-start "" minikie.github.io
+start "" https://minikie.github.io
+cd ..
+cd ..
