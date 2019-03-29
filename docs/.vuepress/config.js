@@ -7,16 +7,18 @@ module.exports = {
     themeConfig: {
       nav: [
         { text: 'Home', link: '/' },
-        { text: 'Xen', link: '/xenarix/intro' },
+        { text: 'Xen', link: '/xenarix/1_intro' },
         { text: 'About', link: '/about/' }
       ],
       sidebar: {
         '/xenarix/': [
-            'intro',
-            ['general','제너'],
-            'model',
-            'result',
-            'etc',
+            '1_intro',
+            ['2_general','general'],
+            '3_variable',
+            '4_model',
+            '5_shock',
+            '6_result',
+            '7_examples'
         ]
     }
   },
