@@ -6,33 +6,27 @@
 
 | 항목         | 변수명             |              예시 |
 |:------------|----------------|----------------:|
-| 시나리오 ID    | scenario_id     |   "TESTSCENID1" |
-| 결과 ID      | result_id       | "TESTRESULTID1" |
-| 기준일        | reference_date  |      "20150902" |
-| 시나리오 생성 개수 | scenario_num    |              30 |
-| 구분자        | delimiter       |         "SPACE" |
-| 최종만기       | maxyear         |              30 |
-| 난수 종류      | rnd_type        |         "SOBOL" |
-| 난수 세부 종류   | rnd_subtype     |         "SOBOL" |
-| 난수 생성 초기값  | rnd_seed        |               1 |
-| 난수 건너뜀 횟수  | rnd_skip        |               0 |
-| 적률일치법 사용   | moment_match    |           False |
-| 구간 주기      | frequency       |       "monthly" |
-| 구간(월 고정)   | frequency_month |              10 |
-| 구간(일 고정)   | frequency_day   |              11 |
-| 구간 개수(연간)  | n_peryear       |              52 |
-| 기준통화       | base_currency   |           "USD" |
-| CPU 사용 개수  | thread_num      |               1 |
+| Scenario ID    | scenario_id     |   "TESTSCENID1" |
+| Result ID      | result_id       | "TESTRESULTID1" |
+| ReferenceDate        | reference_date  |      "20150902" |
+| ScenarioNum | scenario_num    |              30 |
+| Delimiter        | delimiter       |         "SPACE" |
+| MaxYear       | maxyear         |              30 |
+| RandomType      | rnd_type        |         "SOBOL" |
+| RandomSubtype   | rnd_subtype     |         "SOBOL" |
+| RandomSeed  | rnd_seed        |               1 |
+| RandomSkip  | rnd_skip        |               0 |
+| MomentMatching   | moment_match    |           False |
+| Frequency      | frequency       |       "monthly" |
+| FrequencyMonth   | frequency_month |              10 |
+| FrequencyDay   | frequency_day   |              11 |
+| NPerYear  | n_peryear       |              52 |
+| BaseCurrency       | base_currency   |           "USD" |
+| UseCPU Num  | thread_num      |               1 |
 
 
 
-시나리오 
-
-
-각각을 설정하는 방법은 요래 디테일은 밑에 참고해.
-
-
-## 시나리오 생성 개수
+## ScenarioNum
 
 생성할 시나리오의 개수를 설정하는 항목입니다. 보통 200, 500, 1,000개를 이용합니다.
 최소 20개 부터 100,000까지 설정할 수 있습니다.

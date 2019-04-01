@@ -1,8 +1,8 @@
-# 소개
+# Introduction
 
  경제시나리오 어쩌구 .. python으로 되어있고 .. 어디에다가 쓰고 등..
 
-## 빠른 시작
+## Quick Start
 
 ### 1. Generate
 
