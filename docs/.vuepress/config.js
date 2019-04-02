@@ -12,37 +12,31 @@ module.exports = {
   // title: "Xenarix",
   // description: "Economic Scenario Generator",
   host: "localhost",
-  langs: [
-    { lang: 'en', label: 'English', path: '/', selectText: 'Languages' },
-    { lang: 'zh-CN', label: '简体中文', path: '/en/', selectText: '选择语言' }
-  ],
-  title: {
-    '/': 'VuePress',
-    '/en/': '中文 title'
-  },
-  description: {
-    '/': 'English description',
-    '/en/': '中文 description'
+  locales:{
+    '/': {
+      lang: '한글', // this will be set as the lang attribute on <html>
+      title: 'Xenarix',
+      description: '경제 시나리오 발생기'
+    },
+    '/en/': {
+      lang: 'English',
+      title: 'Xenarix',
+      description: 'Economic Scenario Generator'
+    }
   },
   themeConfig: {
     locales: {
       "/": {
+        selectText: '언어',
         nav: [
-          { text: "Home", link: "/" },
-          { text: "Xenarix", link: "/xenarix/1_intro" },
-          { text: "About", link: "/about/" },
-          {
-            text: "Languages",
-            items: [
-              { text: "한글", link: "/xenarix/1_intro" },
-              { text: "English", link: "/en/xenarix/1_intro" }
-            ]
-          },
+          { text: "소개", link: "/intro/" },
+          { text: "메뉴얼", link: "/xenarix/1_quickstart" },
+          { text: "라이센스", link: "/license/" },
           { text: "GitHub", link: "https://github.com/minikie/xenarix" }
         ],
         sidebar: {
           "/xenarix/": [
-            "1_intro",
+            "1_quickstart",
             "2_general", //['2_general','general'],
             "3_variable",
             "4_model",
@@ -52,23 +46,17 @@ module.exports = {
           ]
         }
       },
-      "/en": {
+      "/en/": {
+        selectText: 'Languages',
         nav: [
-          { text: "Home", link: "/" },
-          { text: "Xenarix", link: "/xenarix/1_intro" },
-          { text: "About", link: "/about/" },
-          {
-            text: "Languages",
-            items: [
-              { text: "한글", link: "/xenarix/1_intro" },
-              { text: "English", link: "/en/xenarix/1_intro" }
-            ]
-          },
+          { text: "Intro", link: "/en/intro/" },
+          { text: "Menual", link: "/en/xenarix/1_quickstart" },
+          { text: "License", link: "/en/license/" },
           { text: "GitHub", link: "https://github.com/minikie/xenarix" }
         ],
         sidebar: {
           "/en/xenarix/": [
-            "1_intro",
+            "1_quickstart",
             "2_general", //['2_general','general'],
             "3_variable",
             "4_model",

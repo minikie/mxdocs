@@ -18,7 +18,7 @@ import xenarix as xen
 import xenarix.sample as xen_s
 ```
 
-Make scenario set and scenario:
+Make new scenario set and scenario:
 
 ```python
 scenSet = xen.ScenarioSet(set_name='set1')
@@ -82,7 +82,7 @@ You can download [ResultViewer](https://github.com/minikie/xenarix/releases/late
 
 Download ResultViewer.Zip and Run Setup.exe 
 
-![ScreenShot](https://github.com/minikie/xenarix/img/resultviewer.png?raw=true)
+![ScreenShot](/images/resultviewer.png)
 
 
 

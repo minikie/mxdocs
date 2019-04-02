@@ -1,6 +1,6 @@
-# 기초자산 모델
+# Underlying Model
 
-## 개요
+## Overview
 
 일반적으로 모델 더하는 방법이랑 , 제거하는 방법이랑 
 model.name
@@ -24,9 +24,9 @@ scen.add_model()
 
 
 
-## 이자율 모형
+## InterestRate Model
 
-### 헐-화이트
+### Hull White
 이건 hw 가 만든 이자율 모델이야. 어쩌구 
 수식은 이래
 : dr = a(theta - r) ...
@@ -38,16 +38,16 @@ fittingcurve
 
 
 
-## 주식 모형
+## Equity Model
 
 
-### 지수
+### GBM
 이건 gbm이야 설명은 요렇고
 수식은 이래
 
 입력값은 요래
 > gbm.x0 = 100
 
-## 환율 모형
+## Fx Model
 
 ### 

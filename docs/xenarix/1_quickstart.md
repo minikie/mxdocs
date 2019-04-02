@@ -1,30 +1,26 @@
-# 소개
+# 빠른 시작
 
- 경제시나리오 어쩌구 .. python으로 되어있고 .. 어디에다가 쓰고 등..
+## 설치 및 생성
 
-## 빠른 시작
-
-### 1. Generate
-
-To install Xenarix, simply use pip :
+Xenarix 설치를 위해 pip를 이용함 :
 
 ``` {.sourceCode .bash}
 $ pip install xenarix
 ```
 
-Import Xenarix Library :
+설치된 Xenarix 라이브러리를 포함시킴 :
 ```python
 import xenarix as xen
 import xenarix.sample as xen_s
 ```
 
-Make scenario set and scenario:
+시나리오 세트를 생성함 :
 
 ```python
 scenSet = xen.ScenarioSet(set_name='set1')
 ```
 
-Make scenario and Add Model to scenario:
+시나리오 객체를 생성하고, 객체에 모델을 추가함 :
 
 ```python
 scen1 = xen.Scenario(scen_id='scen_id1', result_id='result_id1')
@@ -33,16 +29,16 @@ scen1.add_model(xen_s.gbm('kospi200'))
 scen1.add_model(xen_s.hw1f('irskrw'))
 ```
 
-Add scenario to scenario set and Generate it:
+시나리오 객체를 시나리오 세트에 추가 하고, 생성을 시작함 :
 
 ```python
 scenSet.add_scenario(scen1)
 scenSet.generate()
 ```
 
-### 2. Generated Scenario Results
+## 결과 조회
 
-We have two methods for checking result data.
+생성된 시나리오는 2가지 방법으로 조회할 수 있습니다.
 
 * Python result loader
 
@@ -76,47 +72,13 @@ print (modelpath)  # ndarray : shape(scenarioNum, t_count)
 
 ---------------------------------------
 
-* ResultViewer for Windows
+* 윈도우 이용자를 위한 ResultViewer
 
-You can download [ResultViewer](https://github.com/minikie/xenarix/releases/latest) For Windows 
+![ScreenShot](/resultviewer.png)
 
-Download ResultViewer.Zip and Run Setup.exe 
-
-![ScreenShot](https://github.com/minikie/xenarix/img/resultviewer.png?raw=true)
-
-
-
-## repository setting
-
-default는 subdirectory 가 생기고 xenarix 이고
-세팅을 하는 방법은 xen.set_repo() 함수
-
->> set_repo('c:\ttt')
->> set_default_repo('')
-
-생성된 시나리오가 저장됨.
-
-## xen main
-scenid , setid , resultid 설정함. 
-폴더구조 - 및 설명
+[ResultViewer](https://github.com/minikie/xenarix/releases/latest) 로 방문하여,
+XenarixResultViewer_0_1_18.zip을 다운로드 후 압축을 풀고 Setup.exe을 실행하여 설치 할 수 있습니다.
 
 
 
 
-
-## model
-link 모델
-
-
-## results
-time grid 가 있어
-이걸 사용하는 방법은 어쩌구
-
-
-## graph view
-
-
-## Examples
-main 샘플
-
-나머지 링크
