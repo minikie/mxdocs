@@ -42,7 +42,7 @@ scenSet.generate()
 
 * Python result loader
 
-Create ResultObj :
+ResultObj 객체를 생성함 :
 
 ```python
 import xenarix.results as xen_r
@@ -50,21 +50,21 @@ import xenarix.results as xen_r
 res = xen_r.ResultObj('set1', 'scen_id1', 'result_id1') 
 ```
 
-Time 't' iterating in TimeGrid :
+TimeGrid 객체의 반복문 사용 방법 :
 
 ```python
 for t in res.timegrid:
     print (t)  # Pandas(INDEX=16L, DATE='2015-09-18', T=0.043835616438356005, DT=0.0027397260273970005)
 ```
 
-Get Multipath of specific scenario count :
+특정 시나리오에 해당하는 전체모델을 조회함 :
 
 ```python
 multipath = res.get_multipath(scen_count=1)
 print (multipath)  # pandas table shape(t_count, model_count)
 ```
 
-Get Modelpath of specific model :
+특정 모델에 해당하는 전세 시나리오를 조회함 :
 ```python
 modelpath = res.get_modelpath(model_count=1)
 print (modelpath)  # ndarray : shape(scenarioNum, t_count)
@@ -76,8 +76,7 @@ print (modelpath)  # ndarray : shape(scenarioNum, t_count)
 
 ![ScreenShot](/resultviewer.png)
 
-[ResultViewer](https://github.com/minikie/xenarix/releases/latest) 로 방문하여,
-XenarixResultViewer_0_1_18.zip을 다운로드 후 압축을 풀고 Setup.exe을 실행하여 설치 할 수 있습니다.
+[ResultViewer](https://github.com/minikie/xenarix/releases/download/v0.1.18/XenarixResultViewer_0_1_18.zip)를 다운로드 후 압축을 풀고 Setup.exe을 실행하여 설치 할 수 있습니다.
 
 
 
