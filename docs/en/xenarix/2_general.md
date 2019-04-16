@@ -2,7 +2,7 @@
 
 ## Overview
 
-시나리오를 생성 할 때 사용되는 옵션은 다음과 같습니다.
+The options used when creating the scenario are:
 
 | 항목         | 변수명             |              예시 |
 |:------------|----------------|----------------:|
@@ -28,8 +28,7 @@
 
 ## Scenario Num
 
-생성할 시나리오의 개수를 설정하는 항목입니다. 보통 200, 500, 1,000개를 이용합니다.
-최소 20개 부터 100,000까지 설정할 수 있습니다.
+This is the number of scenarios to be created. You usually use 200, 500, or 1,000 units. and it's minimum is 20 to 100,000.
 
 ```python
 sen1.general.scenario_num = 1000  # default = 30
@@ -37,7 +36,7 @@ sen1.general.scenario_num = 1000  # default = 30
 
 
 ## Referenc eDate
-시나리오의 생성 기준일이며, 시작 값에 해당하는 날짜 입니다. 기준일 형식은 yyyymmdd 형태로 넣어야합니다.
+The reference date of the scenario, which is the date corresponding to the start date. The base date format must be in the form yyyymmdd.
 
 ```python
 sen1.general.reference_date = '20181011' # default = 20150902
@@ -45,8 +44,8 @@ sen1.general.reference_date = '20181011' # default = 20150902
 
 
 ## Delimiter
-시나리오 결과 파일을 생성할 시에 사용될 구분자 text입니다.
-Python Version에서는 사용되지 않습니다. 
+The separator text to be used when generating the scenario result file.
+Not used in Python Version.
 
 ```python
 sen1.general.delimiter = '|'  # default = 'SPACE'
@@ -54,8 +53,9 @@ sen1.general.delimiter = '|'  # default = 'SPACE'
 
 
 ## MaxYear
-기준일 + (최종 만기)년 까지 시나리오가 생성이 되며, 연단위로 설정합니다. 
-최소은값 1년이고, 최대는 120년입니다.
+
+The scenario will be created up to the base date + (final maturity) year.
+The minimum value is 1 year, and the maximum is 120 years.
 
 ```python
 sen1.general.maxyear = 10   # default = 30
@@ -63,21 +63,22 @@ sen1.general.maxyear = 10   # default = 30
 
 
 ## NPerYear
-구간 주기가 'custom'으로 설정이 되었을 때에 연간 구간 개수이며, 구간이 소수점으로 생성될 때 가까운 정수부분에 해당하는 일자로 매핑됩니다.
+When the interval is set to 'custom', this is the number of intervals per year. When the interval is created as a decimal point, it is mapped to a date corresponding to the nearest integer part.
 
 ```python
 sen1.general.n_peryear = 52   # default = 30
 ```
 
 ## Random Type
-사용할 난수를 설정합니다. Sobl , Crude를 사용할 수 있습니다.
+Sets the random number to use. Sobl, Crude can be used.
 
 ```python
 sen1.general.rnd_type = 'sobol'   # default = 'sobol'
 ```
 
 ## Random Subtype
-선택된 난수의 세부 종류를 설정합니다. 각각 마다 아래와 같이 세부설정을 할 수 있습니다.
+Sets the detail type of the selected random type. You can make detailed settings as below.
+
 * Sobol : ...
 * Crude : 메르센, ...
 
@@ -87,7 +88,7 @@ sen1.general.rnd_subtype = 'jackel'   # default = 'jackel'
 
 
 ## Random Seed
-난수를 생성할 때 사용되는 초기값입니다. 초기값이 고정되면, 같은 순서로 난수가 생성됩니다.
+This is the initial value(seed) used when generating a random number. When the initial values ​​are fixed, a random number is generated in the same order.
 
 ```python
 sen1.general.rnd_seed = 0      # default = 1
@@ -95,7 +96,7 @@ sen1.general.rnd_seed = 0      # default = 1
 
 
 ## Random Seed
-난수를 생성할 때 설정된 횟수를 시나리오 기준으로 건너뛴 후 생성합니다. 
+This is a random number after skipping the set number of times based on the scenario.
 
 예시) 10 -> 10번의 시나리오를 건너뜀 
 ```python
@@ -104,7 +105,7 @@ sen1.general.rnd_skip = 10      # default = 0
 
 
 ## Moment Matching
-생성된 가우사안 랜덤의 평균을 0으로 사후 조정합니다.
+Adjust the average of the generated Gaussian randoms to zero.
 
 ```python
 sen1.general.moment_match = True      # default = False
@@ -112,11 +113,11 @@ sen1.general.moment_match = True      # default = False
 
 
 ## Frequency
-구간의 주기를 설정합니다. 사용되는 주기는 아래와 같습니다.
-년 또는 월로 설정할 시 고정하는 월 또는 일을 설정해야 합니다.
+Sets the interval of the interval. The frequency used is as follows.
+You must set the month or day you want to set as the year or month.
 
-* monthly : 매월
-* everyfourmonth : 4개월
+* monthly
+* everyfourmonth
  
 ```python
 sen1.general.frequency = 'monthly'      # default = 'monthly'
@@ -124,7 +125,7 @@ sen1.general.frequency = 'monthly'      # default = 'monthly'
 
 
 ## Frequency Month
-구간주기가 년으로 설정되었을 때 사용됩니다. 고정적으로 생성되는 구간 월입니다.
+Used when the interval period is set to years. This is the fixed month of the month.
 
 ```python
 sen1.general.frequency_monthly = 2      # default = 1
@@ -132,7 +133,7 @@ sen1.general.frequency_monthly = 2      # default = 1
 
 
 ## Frequency Day
-구간주기가 년 또는 월으로 설정되었을 때 사용됩니다. 고정적으로 생성되는 구간 일입니다.
+Used when the interval period is set to year or month. This is a fixedly generated interval.
 
 ```python
 sen1.general.frequency_day = 1      # default = 1

@@ -27,7 +27,7 @@ module.exports = {
   themeConfig: {
     locales: {
       "/": {
-        selectText: '언어',
+        selectText: 'Languages',
         nav: [
           { text: "소개", link: "/intro/" },
           { text: "메뉴얼", link: "/xenarix/1_quickstart" },

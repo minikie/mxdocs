@@ -1,6 +1,5 @@
 ---
 home: true
-pageClass: main-page-class
 heroImage: /xenarix-logo2-45.png
 actionText: 시작 →
 actionLink: /intro/

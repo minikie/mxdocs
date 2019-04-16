@@ -1,10 +1,6 @@
-# Introduction
+# Quick Start
 
- 경제시나리오 어쩌구 .. python으로 되어있고 .. 어디에다가 쓰고 등..
-
-## Quick Start
-
-### 1. Generate
+## Install and Generation
 
 To install Xenarix, simply use pip :
 
@@ -40,7 +36,7 @@ scenSet.add_scenario(scen1)
 scenSet.generate()
 ```
 
-### 2. Generated Scenario Results
+### 2. Get Scenario Results
 
 We have two methods for checking result data.
 
@@ -78,45 +74,9 @@ print (modelpath)  # ndarray : shape(scenarioNum, t_count)
 
 * ResultViewer for Windows
 
-You can download [ResultViewer](https://github.com/minikie/xenarix/releases/latest) For Windows 
+![ScreenShot](/images/resultviewer.png)
+
+You can download [ResultViewer](https://github.com/minikie/xenarix/releases/latest) 
 
 Download ResultViewer.Zip and Run Setup.exe 
 
-![ScreenShot](/images/resultviewer.png)
-
-
-
-## repository setting
-
-default는 subdirectory 가 생기고 xenarix 이고
-세팅을 하는 방법은 xen.set_repo() 함수
-
->> set_repo('c:\ttt')
->> set_default_repo('')
-
-생성된 시나리오가 저장됨.
-
-## xen main
-scenid , setid , resultid 설정함. 
-폴더구조 - 및 설명
-
-
-
-
-
-## model
-link 모델
-
-
-## results
-time grid 가 있어
-이걸 사용하는 방법은 어쩌구
-
-
-## graph view
-
-
-## Examples
-main 샘플
-
-나머지 링크
