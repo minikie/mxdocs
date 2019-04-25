@@ -109,7 +109,7 @@ sen1.general.rnd_skip = 10      # default = 0
 
 
 ## 적률일치법 사용
-생성된 가우사안 랜덤의 평균을 0으로 사후 조정합니다.
+각 모델의 이론 평균과 생성된 시나리오의 산출 평균값이 일치하도록 사후 조정합니다.
 
 ```python
 sen1.general.moment_match = True      # default = False

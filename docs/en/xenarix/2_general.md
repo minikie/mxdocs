@@ -105,7 +105,7 @@ sen1.general.rnd_skip = 10      # default = 0
 
 
 ## Moment Matching
-Adjust the average of the generated Gaussian randoms to zero.
+Adjust posteriorly so that the theoretical(population) mean of each model is equal to the calculated(sample) mean of the generated scenarios.
 
 ```python
 sen1.general.moment_match = True      # default = False
