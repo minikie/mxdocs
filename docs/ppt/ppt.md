@@ -41,8 +41,142 @@
 # 사이트 및 어쩌구
 
 * 전체적인 이야기 흐름 틀 잡아야함. ( 이게 목적이 지식전달임 )
-  1. 제목
+  
+  1. 제목 : ESG 소개 및 활용
+     
   2. 목차
+     1. ESG 소개
+        1. 정의
+            ESG (경제 시나리오 생성기)는 금융 시장 가치 측정과 경제적 변수 모델을 시뮬레이션하는 데 사용되는 시뮬레이션 경제 모델입니다. 주로 이 두가지 목적 사용됩니다.
+            
+            ESG 는 크게 경제 변수를 모델링을 위한 RW (Real World Model)과 금융상품 가치 평가에 사용되는 RN(Risk Neutral Model)로 나뉘어 집니다.
+
+            RW : 어쩌구 , RM
+
+        2. 중요성
+            제안서 보고, 워딩 그래도 가져다가 박음
+            
+
+        3. 경제변수 모델링(그림 잘 그려넣음)
+            ESG에서 주로 모델링 하는 대상들은 다음과 같다...
+
+            interest rates : 이자율로 할인율 산출 등 어디에 사용함
+            bond yields and returns : 회사 채권, 여러 채권의 수익률
+            equity and fund returns : 주식 펀드 등 수익률
+            derivatives greeks and returns : 파생상품의 greeks 및 수익률
+            foreign-exchange rates : 환율, 해외 채권 투자 포지션을 분석할 때 사용함. 
+
+
+        4. 모델의 구분
+            보통 알려진 모델은 아래와 같다...
+
+            주식 : gbm , gbm constant , localvol - 지수 적인 증가 모형
+            금리 : hw , bk                       - Mean Reverting, Termstructure Fitting
+            환율 : gk                            - IRP
+            펀드 : multifactor-gbm               - 수익률이 조합됨
+            하이브리드 : hw-bs, heston            - 이자율과 주식이 조합됨, 변동성
+            변동성 : garch-arch, mean-reverting   - 
+            경기지수 : arima                      - 계절성 등
+
+
+        5. 시나리오 생성 과정
+            시나리오를 생성하는 과정은 목적(충격시나리오 생성, 평가 분석, 전망등)에 따라 다르며, 
+            일반적으로 8단계로 수행을 한다.
+
+            target 설정(직접(펀드) 또는 간접(벤치마크))
+            각 모델 선정
+            시장데이터 및 상관계수 준비(펀드 맵핑, 보유비중, 금리커브)
+            Calibration 수행
+            general info 설정
+            시나리오 생성
+            결과 분석
+            다시 3번 반복 (부채 감속 목적)
+          
+
+        6. 시나리오 결과(예시)
+            생성된 데이터를 그래프로 그려보면, 아래와같으며, 충격 시나리오등, 
+
+
+        7. 좋은 ESG의 조건
+            ESG 는 아래와 같은 조건들을 만족해야하며, 어쩌구
+
+            1. 계산의 효율성 및 안정성
+            2. 생성하고자 하는 경제변수에 대한 충분한 모델을 가지고 있는가
+            3. 시장지표 모수추정을 통한 현실적인 모델링
+            4. 이론적인 검증(Expectation)을 통과
+            5. 일관되게 확장 가능한가
+
+        8. 검증 
+            생성된 시나리오 결과를 바탕으로, 아래와 같은 분석을 실시하고, 테스트 검정을 한다.
+
+            1. 생성된 시나리오가 , 이론 평균, 분산과 일치 하는가
+            2. 추정된 모수를 사용한 모델가격과 시장가격과 일치하는가
+            3.        
+        
+     2. ESG 이론
+        1. 사용되는 기본이론
+            금융공학의 심장부 역할을 담당하며, 거의 대부분의 이론이 사용된다. 3부분으로 나눌 수 있다.
+
+        2. Stochastic Calculus : SDE, Browinan Motion, Transition Density ...
+            그냥 검색해서 박음
+        
+        각각 설명..
+
+        3. Numerical Analysis : random number, montecarlo, variance reduction,
+                                interpoplation, correlation ...
+            그냥 검색해서 박음
+
+        각각 설명..
+
+
+        4. Financial Practice : timegrid, daycounter, calendar ...
+            그냥 검색해서 박음
+
+        각각 설명..
+
+
+        5. 사용 모델의 종류
+            다음과 같이 6개정도 된다. (표)
+
+        6. GBM, GBM-Const, GBM-LocalVol
+           sde 수식 및 설명 이건 그냥 text book 참고
+
+        7. Galman-Kol
+           sde 수식 및 설명 이건 그냥 text book 참고
+
+        8. Heston
+            sde 수식 및 설명 이건 그냥 text book 참고
+
+        10. HW, BK
+            sde 수식 및 설명 이건 그냥 text book 참고
+
+        11. LMM
+            sde 수식 및 설명 이건 그냥 text book 참고
+
+        12. Calibration
+            현재의 시장정보, 과거 데이터등을 이용해서 모수를 추정하는 것. 
+            MLE를 이요하거나, 해찾기를 이용해서 찾음
+
+            변동성 추정 : Option
+            모수 추정 :
+            상관관계 추정 :
+
+   
+     3. ESG 활용(Xenarix) - 이거는 예전에 만들어 뒀던거 기본으로 해서 만들음.
+        1. 소개
+        2. 특징
+        3. 구조
+        4. UI
+        5. Python
+        6. Excel
+        7. ResultViewer
+        8. 버전 Update (GitHub)
+        9. 향후 방향
+        
+     4.  끝.
+   
+  ------------------------------------------------------------------------
+  
   3. 소개 -> 정의 (1-1)
             한 두줄 쓰고.
             RW 랑 RN 네모칸 하나씩 해서 그 밑에 설명
