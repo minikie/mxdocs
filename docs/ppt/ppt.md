@@ -117,77 +117,144 @@
         1. 사용되는 기본이론
             금융공학의 심장부 역할을 담당하며, 거의 대부분의 이론이 사용된다. 3부분으로 나눌 수 있다.
 
-        2. Stochastic Calculus : SDE, Browinan Motion, Transition Density ...
-            그냥 검색해서 박음
-        
-        각각 설명..
+        2. Stochastic Calculus : SDE, Browinan Motion, Transition Density ..., 
+            Numerier(Measure) change -> 잠깐 설명 pricing kernel 을 바꾼다는 이야기임.
 
+            그냥 검색해서 박음
+
+            SDE : 정의 - 화이트 노이즈를 가지는 수식
+
+            형태는 - 요래 생겼다. ( 그림 dx = 어쩌구 )
+            이게 풀린다는 이야기랑 안풀린다는 이야기는 이런거다.
+
+            BM or Wiener Process : 이거는 Normal Random 의 sequence 형태 sigma space 라고 불리는 도메인
+
+            Transition Density : 이거는 보통 시간의 축으로 해서 시간이 일정 기간 지날 때의 density 
+            Normal이 아닌 경우가 있다.
+
+            Numerier(Measure) change : P/Q measure (각각 설명), T-forward, spot
+        
         3. Numerical Analysis : random number, montecarlo, variance reduction,
                                 interpoplation, correlation ...
             그냥 검색해서 박음
 
-        각각 설명..
+            Random Number : 참난수 , 준난수 , 의사난수 각각 목적이 다르며, 특징을 요렇다.
+            각각은 요식의 방법론이 있다. 수식으로 요렇고, 주기도 그러고 어쩌구 등 
+            uniform 을 시작으로 해서 normal로 변환해서 쓴다. 변환 방법에는 요런게 있다.
+            Box muller(좌표변환) , central limit theorem() , inverse transfrom(누적분포) - 다 Normal 자체가 초월함수여서 적분함수를 모름. 뉴메리컬하게 풀어야댐.
+
+            Monte : 이거는 적분할 때 넓이 구하는거, 일반적으로 말하면 integral or expectation 구해줌.
+                     어쩌구...
+
+            Variance Reduction : 이거는 분산 감소법 , 방법론은 다음과 같이 여러가지가 있다.
+            대조변량 , 적률일치 등
+
+            Interpolation : 이거는 두개 선 있는거
+
+            Correlation : 이거는 상관관계 구하는 방법 , 방법론은 다음과 같이 여러가지 등...
+                          피어슨 코릴, 
+                          랜덤 뽑고 구하는 방법은 요래
 
 
         4. Financial Practice : timegrid, daycounter, calendar ...
-            그냥 검색해서 박음
+            
+            Timegrid는 요럴때 쓴다. 
+
+            daycounter 는 요런식으로 있다. 각각 . 우리나라는 보통 요거, pricing할때 쓰임
+            이자등.. yearfraction 
+
+            calendar 는 휴일( 크게 의미 없다. ) 일요일만 잘 넣어주면댐. 데일리일때는 중요할수 있다.
+
 
         각각 설명..
-
 
         5. 사용 모델의 종류
             다음과 같이 6개정도 된다. (표)
 
-        6. GBM, GBM-Const, GBM-LocalVol
+            구분 방법이 여러가지가 있는데, 그냥 이름으로 구분하는게 제일 간단하다.
+
+        6. 전반적인 모델에 대한 설명
+           Notation , brigo에서 따왔다. ++ 은 termstructure consistant를 말한다.
+           fitting curve 가 있다는 말이지... short-model 
+
+        7. GBM, GBM-Const, GBM-LocalVol
            sde 수식 및 설명 이건 그냥 text book 참고
 
-        7. Galman-Kol
-           sde 수식 및 설명 이건 그냥 text book 참고
+        8. Galman-Kol
+           얘는 그냥 fx 쪽에서 사용 옵션 구할때 요래 구한다.
+            IRP 이용해서 구함.
+            모수는 요래 사용함.
 
-        8. Heston
+        9. Heston ( 2-factor )
+            만든놈 : 누구, 특징 : 어쩌구
+            transition density : 어쩌구
+            sde 수식 및 설명
+            모수의 의미
+
+        10. HW, BK ( T-forward measure )
             sde 수식 및 설명 이건 그냥 text book 참고
 
-        10. HW, BK
+        11. CIR ( CIR++ )
             sde 수식 및 설명 이건 그냥 text book 참고
 
-        11. LMM
+        12. Vasicek ( Vasicek++ )
             sde 수식 및 설명 이건 그냥 text book 참고
 
-        12. Calibration
+        13. G2++
+            guassian process 의 두개 버전(캐노니칼 폼) hw2f = g2 두개가 같다는 이야기.
+            link 식은 다음과 같다.
+
+        14. Hybrid Model
+            Hw-BS
+        
+        15. Vol Model
+            SABR, Heston, Local, 
+
+
+        16. Calibration
             현재의 시장정보, 과거 데이터등을 이용해서 모수를 추정하는 것. 
             MLE를 이요하거나, 해찾기를 이용해서 찾음
 
             변동성 추정 : Option
             모수 추정 :
             상관관계 추정 :
-
    
      3. ESG 활용(Xenarix) - 이거는 예전에 만들어 뒀던거 기본으로 해서 만들음.
         1. 소개
         2. 특징
         3. 구조
+         - 요래 요래 있다.(그림)
         4. UI
+         - 설명 : 사용자 UI로 시나리오 파일들을 조회하고 생성등 관리함.
+         - 전체 스크린샷. ( 구조 설명 )
          - program 켬
          - 모델 몇개 넣고, gen.
          - 결과 보기
         5. Python
-          - 설치함
+          - 설명 : python version 으로 시스템 배치작업등 자동화 업무에 사용함.
+                   github web site 에서 소스를 다운받을 수 있음.
+          - github 사이트 화면넣음
+          - pythonIDE(pycharm)을 열고, install 을 한 후에
           - sample copy함
-          - 모델을 몇개 더함. gen.
-          - 결과 보기
+          - 모델을 몇개 더함. gen을 함.
+          - 결과 보기(그래프 그림나오는 거 코드 사용)
         6. ResultViewer
-          - 설치함
+          - 설명 : 생성된 시나리오의 결과 조회하며, 저장소를 조회하고 관리함.
+          - 전체 스크린샷. ( 구조 설명 )
           - 켬, repository 선택함
-          - 위에서 생성함 것들 결과 보여줌   
-        7. Excel
-          - 설치함
+          - 위에서 생성함 것들 결과 보여줌
+        7. Excel 
+          - Excel Version 으로 사용자 업무 등에 사용함.
+          - 함수 list를 우선 나열(표) - 설명 및 api site가 필요함... 차후
           - sample excel을 열음
           - 모델은 정해져있음
           - 모수 몇 개 바꿈
           - 결과 보기
-        8. 버전 Update (GitHub)
-          -> update : www.montrix.co.kr , blog.naver.com/montrix , github.com/xenarix
-        9.  향후 방향
+        *8.  버전 Update (GitHub)
+          - 사이트 3개 소개함 ( 스크린샷하고, 밑에 간략한 설명 )
+          -> homepage : www.montrix.co.kr , blog.naver.com/montrix , github.com/xenarix
+          - 우선 -> 
+        1.  향후 방향
           -> update 방향 -> 1.0 -> 2.0 : 솔루션 쪽으로 개발됨.
           -> sol2, 및 k-ics 등 필요한 라이브러리가 업데이트되면 그냥 가져다가 쓰면됨.
           -> 시나리오 파일을 웹에서 내려받거나 서로 교환할 수 있음.( 사이트..? )
@@ -329,3 +396,16 @@ esg의 큰 구분은 mc랑 rw가 있다.. 각각은 요렇다.. 모델, 칼리�
 실습 자료를 만들고, 대학가서 강의하자요...
 실무 할 때 사용하는 방법 등 -> 생성 xen 파일이라던지, 커브는 어디서 쓴다던지 등..
 python or excel 등
+
+---------------------------------------------------------------
+우선 대상을 수식을 많이 사용하지 않는 그런 방향으로 하고, 일반적으로 경영자나 실무자가
+어려움을 느끼지 않는 정도의 수준으로 설명을 30-40분정도로 함. 쓰임새라던지 중요한 포인트
+이런게 중요하다 등. esg는 이런거다.  근데 안쪽에는 이런 이론들이 있다.
+
+
+
+
+
+
+
+
