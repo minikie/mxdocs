@@ -126,7 +126,7 @@
        Normal이 아닌 경우가 있다.
 
        Numerier(Measure) change : P/Q measure (각각 설명), T-forward, spot
-   
+
    3. Numerical Analysis : random number, montecarlo, variance reduction,
                            interpoplation, correlation ...
        그냥 검색해서 박음
@@ -148,9 +148,8 @@
                      피어슨 코릴, 
                      랜덤 뽑고 구하는 방법은 요래
 
-
    4. Financial Practice : timegrid, daycounter, calendar ...
-       
+
        Timegrid는 요럴때 쓴다. 
 
        daycounter 는 요런식으로 있다. 각각 . 우리나라는 보통 요거, pricing할때 쓰임
@@ -209,8 +208,8 @@
        MLE를 이요하거나, 해찾기를 이용해서 찾음
 
        변동성 추정 : Option
-       모수 추정 :
-       상관관계 추정 :
+       모수 추정 : 
+       상관관계 추정 : 
 
 5. ESG 활용(Xenarix) - 이거는 예전에 만들어 뒀던거 기본으로 해서 만들음.
    1. 소개
