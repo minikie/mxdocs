@@ -196,73 +196,79 @@
        보간법의 종류 : Flat, Linear, Cubic (Discount, Yield, Spot, Forward)
        보외법의 종류 : Linear, Smith-Wilson, Nelson-Siegel, Svensson 각각의 특징
 
-
        Correlation : 이거는 상관관계 구하는 방법 , 방법론은 다음과 같이 여러가지 등...
                      피어슨 코릴, 
                      랜덤 뽑고 구하는 방법은 요래
+                     두 변수 X 와 Y 간의 선형 상관 관계를 계량화한 수치이며 +1과 -1 사이의 값을 가진다.
+                     그림1 : 두자산간 점찍고 그래프
+                     그림2 : 매트릭스 (N개의자산)
+                     응용분야 : 나열
+                     데이터 추정 문제 : 몇개 메서드로 해서 PCA기반(랭크 줄여서)
+
+                     응용분야가 옵션평가 시장 위험 관리 목적을위한 스트레스 테스트 및 시나리오 분석, 또는 신용 파생 상품에 대한 많은 수의 채무자들 사이의 상관 행렬의 명세 가격 책정 또는 신용 위험 관리이런거등...
+                     신용위험 쪽이나 이런데는 코퓰라를 많이 쓴다.
+                     근데 ESG에서는 보통 상관관계를 사용하는 목적은 얼마나 경제지표들의 현실적으로 묘사가 되는가를 목표로 상관관계 매트릭스를 작성을 하는데...
+                     이게 추정 문제가 중요할 수 있다.
+                     금융 위기시 동기화라던지, 아웃라이어라던지,
+                     두부분으로 나누면, 매트릭스 자체의 문제(다이나믹 매트릭스)는 시간변화에 따른 문제이고,
+                     아웃라이어는 모델로 해결을 한다요.
+
+
 
    4. Financial Practice : timegrid, daycounter, calendar ...
 
-       Timegrid는 요럴때 쓴다. 
+       현재 금융 시장과 업무의 상황에 맞게 사용되는 개념들이다.
 
-       daycounter 는 요런식으로 있다. 각각 . 우리나라는 보통 요거, pricing할때 쓰임
+       * Timegrid : 일간, 월간, 월말, 분기, 분기말, 연간, 연말 등
+         이런 것들은 실제로 부채와 자산간의 정확한 시뮬레이션을 위해 필요함.
+       * Daycounter 는 요런식으로 있다. 각각 . 우리나라는 보통 요거, pricing할때 쓰임
        이자등.. yearfraction 
+       * Calendar 는 휴일( 크게 의미 없다. ) 일요일만 잘 넣어주면댐. 
+         데일리일때는 중요할수 있다. 
+       * Business day conv : Modify Following, Preceding, ...
+       
 
-       calendar 는 휴일( 크게 의미 없다. ) 일요일만 잘 넣어주면댐. 데일리일때는 중요할수 있다.
-
-
-   각각 설명..
-
-   1. 사용 모델의 종류
-       다음과 같이 6개정도 된다. (표)
-
+   1. 기초자산 모델(앞에 꺼랑 중복으로 뺌)
        구분 방법이 여러가지가 있는데, 그냥 이름으로 구분하는게 제일 간단하다.
+       다음과 같이 6개정도 된다. (표)
 
    2. 전반적인 모델에 대한 설명
       Notation , brigo에서 따왔다. ++ 은 termstructure consistant를 말한다.
       fitting curve 가 있다는 말이지... short-model 
 
    3. GBM, GBM-Const, GBM-LocalVol
-      sde 수식 및 설명 이건 그냥 text book 참고
+      Black-Scholes가 주식을 모델링 할 때 사용한 모델로, 지수적으로 증가하며, 음수가 되지 않는 지표들을 모델링 할 때 사용된다. 변동성 부분이 Local-Vol 형태 또는 Stochastic-Vol가 될 수 있다.
 
-   4. Galman-Kol
-      얘는 그냥 fx 쪽에서 사용 옵션 구할때 요래 구한다.
-       IRP 이용해서 구함.
-       모수는 요래 사용함.
+   4. Garman-Kohlhagen
+      GBM의 다중금리를 이용한 확장으로 주로 환율을 모델링 하는데 사용된다. 
 
    5. Heston ( 2-factor )
-       만든놈 : 누구, 특징 : 어쩌구
-       transition density : 어쩌구
-       sde 수식 및 설명
-       모수의 의미
+      GBM 에서 확률 변동성을 이용한 확장으로, Fat-Tail 과 Vol-Smile 효과를 잘 모델링 할 수 있다.
 
    6.  HW, BK ( T-forward measure )
-       sde 수식 및 설명 이건 그냥 text book 참고
+       금리기간구조일치 모형 중 가장 많이 쓰이는 이자율 모형이다.
 
    7.  CIR ( CIR++ )
-       sde 수식 및 설명 이건 그냥 text book 참고
+       균형모형 중 하나로 Vasicek과 비슷 하지만, 이자율이 항상 양수만 산출 되는 모형이다.
 
    8.  Vasicek ( Vasicek++ )
-       sde 수식 및 설명 이건 그냥 text book 참고
+       이자율이 장기 평균에 수렴되도록 하는 모형이다.
 
    9.  G2++
        guassian process 의 두개 버전(캐노니칼 폼) hw2f = g2 두개가 같다는 이야기.
        link 식은 다음과 같다.
 
+
    10. Hybrid Model
-       Hw-BS
+       GBM 모형에서 이자율 부분이 Hull-White 모형으로 되어 있는 2-Factor 모형이다.
    
    11. Vol Model
        SABR, Heston, Local, 
 
-
    12. Calibration
-       현재의 시장정보, 과거 데이터등을 이용해서 모수를 추정하는 것. 
-       MLE를 이요하거나, 해찾기를 이용해서 찾음
-
-       변동성 추정 : Option
-       모수 추정 : 
-       상관관계 추정 : 
+       현재의 시장정보 또는 과거 데이터등을 이용해서 모델에 사용되는 모수를 추정하는 것. 
+       
+       모델의 모수나 상관관계, 변동성 등을 MLE, GMM, EMM, MA, EWMA 등을 이용함.
 
 5. ESG 활용(Xenarix) - 이거는 예전에 만들어 뒀던거 기본으로 해서 만들음.
    1. 소개
@@ -309,9 +315,9 @@
      -> homepage : www.montrix.co.kr , blog.naver.com/montrix , github.com/xenarix
      - 우선 -> 
    1.  향후 방향
-     -> update 방향 -> 1.0 -> 2.0 : 솔루션 쪽으로 개발됨.
-     -> sol2, 및 k-ics 등 필요한 라이브러리가 업데이트되면 그냥 가져다가 쓰면됨.
-     -> 시나리오 파일을 웹에서 내려받거나 서로 교환할 수 있음.( 사이트..? )
+     -> R Library 로 확장
+     -> Python 및 R 금융공학 라이브러리 공유 (sol2, 및 k-ics 등 필요한 라이브러리가 업데이트되면 그냥 가져다가 쓰면됨.)
+     -> 시나리오 파일을 웹사이트에서 내려받거나 서로 교환 가능.
 
 6.  끝.
 

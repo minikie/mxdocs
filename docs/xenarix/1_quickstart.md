@@ -78,6 +78,3 @@ print (modelpath)  # ndarray : shape(scenarioNum, t_count)
 
 [ResultViewer](https://github.com/minikie/xenarix/releases/download/v0.1.18/XenarixResultViewer_0_1_18.zip)를 다운로드 후 압축을 풀고 Setup.exe을 실행하여 설치 할 수 있습니다.
 
-
-
-
