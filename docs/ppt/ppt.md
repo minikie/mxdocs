@@ -258,7 +258,6 @@
        guassian process 의 두개 버전(캐노니칼 폼) hw2f = g2 두개가 같다는 이야기.
        link 식은 다음과 같다.
 
-
    10. Hybrid Model
        GBM 모형에서 이자율 부분이 Hull-White 모형으로 되어 있는 2-Factor 모형이다.
    
