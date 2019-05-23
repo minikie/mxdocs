@@ -279,6 +279,9 @@
 
 5. ESG 활용(Xenarix) - 이거는 예전에 만들어 뒀던거 기본으로 해서 만들음.
    1. 소개
+
+      만들게 된 계기, ESG의 정석 구축, DSL (서로 교환 및 정확한 생성 정보), 인공지능과 연계
+
       Xenarix 는 앞의
 
       1. 여태 설명했던 것들의 구현체인데요. 이름은 xenarix입니다. 
@@ -290,7 +293,6 @@
       검색하면 https://stackoverflow.com/questions/13202799/python-code-geometric-brownian-motion-whats-wrong 
       이런거 나와요.. 적용을 ... 해야대는데... 아... 이게 머지.. 난감함...
       난 그냥 삼성전자, lg전자, 이자율, 
-
 
       1. 
       2. 사실 여러가지 버전이 있어서
