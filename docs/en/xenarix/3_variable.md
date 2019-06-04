@@ -2,17 +2,16 @@
 
 ## Overview
 
-모델에서 사용할 변수를 설정하는 방법입니다. 
-shock을 사용하려면 변수를 설정해야함.
+This is how you set the variables to use in your underlying model.
+You also need to set a common variable to create a shock scenario.
 
-값 변수를 생성하고 등록함 :
+Create and register value variables :
 ```python
 kospi2_v = xen.ValueVariable('kospi2_v', 259)
 scen1.add_variable(kospi2_v)
 ```
 
-
-이자율 커브 변수를 생성하고 등록함 :
+Create and register interest rate curve variables :
 ```python
 irskrw = xen.YieldCurveVariable('irskrw')
 irskrw.tenor = ['3M', '6M', '9M', '12M', '24M', '36M', '48M', '60M', '120M', '180M']
@@ -20,8 +19,7 @@ irskrw.value = [0.0164, 0.0161, 0.0159, 0.0164, 0.0173, 0.0182, 0.0191, 0.0218, 
 scen1.add_variable(irskrw)
 ```
 
-
-변동성 커브 변수를 생성하고 등록함 :
+Create and register variability curve variables :
 ```python
 kospi2_imvol = xen.VolCurveVariable('kospi2_imvol')
 kospi2_imvol.tenor = ['1Y', '2Y', '3Y', '4Y', '5Y']
@@ -30,7 +28,7 @@ scen1.add_variable(kospi2_imvol)
 ```
 
 
-생성된 변수를 사용함
+Use created variable
 ```python
 gbm1 = xen_s.gbm('kospi200')
 gbm1.x0 = kospi2_v

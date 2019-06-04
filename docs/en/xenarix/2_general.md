@@ -4,7 +4,7 @@
 
 The options used when creating the scenario are:
 
-| 항목         | 변수명             |              예시 |
+| Item         | Variable Name     |       Example |
 |:------------|----------------|----------------:|
 | Scenario ID    | scenario_id     |   "TESTSCENID1" |
 | Result ID      | result_id       | "TESTRESULTID1" |

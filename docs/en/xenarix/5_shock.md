@@ -1,7 +1,7 @@
 # Shock Scenario
 
 ## Overview
-설정된 변수에 충격을 준 시나리오를 설정함.
+Set the scenario that impacted the set variables.
 
 ```python
 

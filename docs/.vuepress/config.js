@@ -1,13 +1,8 @@
 // docs/.vuepress/config.js
 module.exports = {
   head: [
-    [
-      "link",
-      {
-        rel: "stylesheet",
-        href: "https://cdn.jsdelivr.net/npm/katex@0.6.0/dist/katex.min.css"
-      }
-    ]
+    [ "link",{rel: "stylesheet",href: "https://cdn.jsdelivr.net/npm/katex@0.6.0/dist/katex.min.css"}],
+    ['link', { rel: 'icon', href: '/xenarix-logo2-45.png' }]
   ],
   // title: "Xenarix",
   // description: "Economic Scenario Generator",
@@ -68,9 +63,17 @@ module.exports = {
       }
     }
   },
-  markdown: {
-    config: md => {
-      md.use(require("markdown-it-katex"));
-    }
-  }
+  plugins: [
+    ['mathjax', {
+      target: 'svg',
+      macros: {
+        '*': '\\times',
+      },
+    }],
+  ]
+  // markdown: {
+  //   config: md => {
+  //     md.use(require("markdown-it-katex"));
+  //   }
+  // }
 };

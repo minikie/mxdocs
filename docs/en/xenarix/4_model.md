@@ -13,13 +13,13 @@ scen.add_model()
 모델의 종류는 다음과 같은 리스트가 있어
 
 
-| 항목 | 모델        | 수식                     | 요인수 | 비고 |
-|----|-----------|------------------------|-----|----|
-| IR | [HW](#HullWhite)        | dr=a(theta-r)*dt + ... | 1   |    |
-| IR | BK        | dr=a(theta-r)*dt + ... | 2   |    |
-| EQ | GBM       | dS=mu*dt + ...         | 1   |    |
-| EQ | GBM_CONST | dS=mu*dt + ...         | 1   |    |
-| FX | GK        |                        |     |    |
+|Type| Model     | Name                      | Factors | Remarks |
+|----|-----------|---------------------------|---------|---------|
+| IR | HW        | Hull-White                | 1       |         |
+| IR | BK        | Black-Karasinski          | 2       |         |
+| EQ | GBM       | Geometric Brownian Motion | 1       |         |
+| EQ | GBM_CONST | GBM (Constant Parameter)  | 1       |         |
+| FX | GK        | Garman–Kohlhagen          | 1       |         |
 
 
 
@@ -27,16 +27,7 @@ scen.add_model()
 ## InterestRate Model
 
 ### Hull White
-이건 hw 가 만든 이자율 모델이야. 어쩌구 
-수식은 이래
 : dr = a(theta - r) ...
-
-입력값은 요래
-
-모델 만드는 방법은 요래
-fittingcurve
-
-
 
 ## Equity Model
 

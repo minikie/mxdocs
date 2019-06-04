@@ -7,3 +7,6 @@ https://vuepress.vuejs.org/default-theme-config/#homepage
 
 # multi language
 https://vuepress.vuejs.org/guide/i18n.html#default-theme-i18n-config
+
+
+npm install -g vuepress-plugin-mathjax
